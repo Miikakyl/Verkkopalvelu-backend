@@ -1,12 +1,14 @@
 <?php
 require_once('./headers.php');
+session_start();
 require_once('./functions.php');
 
 $body = file_get_contents('php://input');
-$user = json_decode($body);
+$input = json_decode($body);
 
-if(isset($user)){
-    $outputRows = searchInput($user);
+if(isset($input)){  
+    $outputRows = searchInput($input);
+    http_response_code('200');
     echo json_encode($outputRows);
 }
 

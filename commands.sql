@@ -59,3 +59,4 @@ create table Tuoteryhma (
    trnimi VARCHAR(50) NOT NULL
 );
 
+SHOW CREATE TABLE Tuote;
