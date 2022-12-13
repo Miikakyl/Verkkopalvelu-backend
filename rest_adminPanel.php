@@ -9,6 +9,4 @@ if(isset($_SESSION['admin'])) {
     echo json_encode($tables);
     return;
 }
-
-echo("Sinulla ei ole käyttäjäoikeuksia tähän sisältöön");
-//tee js redirect jos ei admin
+echo json_encode("Sinulla ei ole käyttäjäoikeuksia tähän sisältöön");
