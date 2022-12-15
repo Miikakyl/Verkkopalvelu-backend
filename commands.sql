@@ -60,3 +60,5 @@ create table Tuoteryhma (
 );
 
 SHOW CREATE TABLE Tuote;
+
+ALTER TABLE Asiakas DROP FOREIGN KEY postinumero;

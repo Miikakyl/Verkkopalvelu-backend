@@ -101,3 +101,38 @@ function getAdminTables() {
         return $e;
     }   
 }
+
+function addNewCategory($category) {
+    $db = openDB();
+
+    try {
+        $sql = "INSERT INTO Tuoteryhma (trnimi) VALUES (?)";
+        $statement = $db->prepare($sql);
+        $statement->execute(array($category));
+        return true;
+    } catch (PDOexception $e) {
+        return $e;
+    }
+}
+
+function setUserInfo($userInfo) {
+    $db = openDB();
+    
+    $fname = htmlspecialchars($userInfo->fname);
+    $lname = htmlspecialchars($userInfo->lname);
+    $email = htmlspecialchars($userInfo->email);
+    $address = htmlspecialchars($userInfo->address);
+    $zipcode = htmlspecialchars($userInfo->zipcode);
+    $phone = htmlspecialchars($userInfo->phone);
+    try {
+        $sql = "INSERT INTO Asiakas (astunnus,postinumero,sahkoposti,etunimi,sukunimi,puh,osoite) VALUES (?,?,?,?,?,?)";
+        $statement = $db->prepare($sql);
+        $statement->execute(array($fname,$lname,$email,$address,$zipcode,$phone));
+    } catch (PDOexception $e) {
+        return $e;
+    }
+}
+
+function setUserOrder($order) {
+
+}

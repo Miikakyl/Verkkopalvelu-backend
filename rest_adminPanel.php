@@ -6,7 +6,10 @@ require_once('./functions.php');
 if(isset($_SESSION['admin'])) {
     $tables = getAdminTables();
     http_response_code(200);
-    echo json_encode($tables);
+    echo json_encode(array($tables,true));
     return;
 }
-echo json_encode("Sinulla ei ole käyttäjäoikeuksia tähän sisältöön");
+else {
+    http_response_code(403);
+    echo json_encode(array("Sinulla ei ole käyttäjäoikeuksia tähän sisältöön",false));
+}
