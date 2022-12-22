@@ -7,6 +7,11 @@ $body = file_get_contents('php://input');
 $input = json_decode($body);
 
 if(isset($input)){
-    setUserInfo($input->userInfo);
-    setUserOrder($input->shoppingcart);
-}   
+    $respond = setUserOrder($input);
+    http_response_code(200);
+    echo json_encode($respond);
+}
+else {
+    http_response_code(400);
+    echo ("Jotain meni vikaan.");
+}

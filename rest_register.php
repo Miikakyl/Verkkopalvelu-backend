@@ -9,11 +9,10 @@ $user = json_decode($body);
 
 if (isset($user)) {
     if (!isset($user->username) || !isset($user->pw)) {
-        http_response_code("400");
+        http_response_code(400);
         echo ("Jotain meni vikaan.");
         return;
     } else {
-        // Saattaa mahdollisesti tehdä vahinkoa salasanoille ja käyttäjätunnuksille ja tee virheenhallinta
         $username = $user->username;
         $password = $user->pw;
 
@@ -22,6 +21,6 @@ if (isset($user)) {
         $_SESSION['username'] = $username;
 
         echo json_encode($respond);
-        http_response_code('200');
+        http_response_code(200);
     }
 }

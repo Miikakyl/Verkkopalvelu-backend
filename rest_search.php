@@ -8,7 +8,7 @@ $input = json_decode($body);
 
 if(isset($input)){  
     $outputRows = searchInput($input);
-    http_response_code('200');
+    http_response_code(200);
     echo json_encode($outputRows);
 }
 

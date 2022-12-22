@@ -59,6 +59,6 @@ create table Tuoteryhma (
    trnimi VARCHAR(50) NOT NULL
 );
 
-SHOW CREATE TABLE Tuote;
+SHOW CREATE TABLE Tilaus;
 
 ALTER TABLE Asiakas DROP FOREIGN KEY postinumero;

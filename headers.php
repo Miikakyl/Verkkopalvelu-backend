@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:3001');
+header('Access-Control-Allow-Oirigin: http://localhost:3001/~n1kymi00');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Credentials: true');
 header('Access-Contro-Allow-Methods: POST,GET,OPTIONS');

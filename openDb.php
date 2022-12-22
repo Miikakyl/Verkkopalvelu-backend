@@ -7,12 +7,12 @@ function openDB(){
     $username = $ini['username'];
     $pw = $ini['pw'];
 
-    try{
+   try{
         $connection = new PDO("mysql:host=$host;dbname=$db", $username, $pw);
         return $connection;
-    }catch(PDOException $e){
-        http_response_code("505");
-        echo "Service is currenty unavailable";
-    }
-    return null;
+   }
+   catch(PDOException $e) {
+        return $e;
+   }
+
 }
